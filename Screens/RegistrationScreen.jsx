@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
     Alert,
-    Button,
     Dimensions,
     StyleSheet,
     Text,
@@ -56,11 +55,15 @@ const RegistrationScreen = () => {
 
 const style = StyleSheet.create({
     title: {
+        paddingTop: 96,
+        textAlign: 'center',
         fontSize: 30,
         marginBottom: 33,
     },
     inputForm: {
+        padding: 16,
         width: '100%',
+        height: '100%',
         gap: 16,
         backgroundColor: '#fff',
     },
@@ -73,10 +76,12 @@ const style = StyleSheet.create({
         backgroundColor: '#F6F6F6',
     },
     container: {
-        backgroundColor: '#f0f',
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        // backgroundColor: '#f0f',
+
+        // flex: 1,
+        width: '100%',
+        // alignItems: 'center',
+        // justifyContent: 'center',
     },
     inputBtn: {
         paddingVertical: 16,
@@ -95,6 +100,7 @@ const style = StyleSheet.create({
     loginLink: {
         backgroundColor: '#fff',
         alignItems: 'center',
+        paddingBottom: 100,
     },
 });
 

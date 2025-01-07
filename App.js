@@ -20,23 +20,20 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-    },
+    // container: {
+    //     flex: 1,
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    //     width: '100%',
+    // },
     screen: {
-        // position: 'absolute',
-        // top: 280,
-        // left: 'auto',
-        // width: 'auto',
-        // borderTopRightRadius: 25,
-        // borderTopLeftRadius: 25,
+        position: 'absolute',
+        top: 263,
+        width: '100%',
+        borderRadius: 25,
+        backgroundColor: '#fff',
     },
     bg: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
 });
