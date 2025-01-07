@@ -13,11 +13,15 @@ const RegistrationScreen = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isPassVisible, setIsPassVisible] = useState(false);
 
     const { width } = Dimensions.get('screen');
 
     const onLogin = () => {
         Alert.alert(`${name} = ${email}`);
+    };
+    const togglePassVisibility = () => {
+        setIsPassVisible(!isPassVisible);
     };
 
     return (
@@ -36,12 +40,24 @@ const RegistrationScreen = () => {
                     placeholder="Адреса електронної пошти"
                     style={style.input}
                 />
-                <TextInput
-                    value={password}
-                    onChangeText={setPassword}
-                    placeholder="Пароль"
-                    style={style.input}
-                />
+                <View style={style.passwordInputBox}>
+                    <TextInput
+                        value={password}
+                        onChangeText={setPassword}
+                        placeholder="Пароль"
+                        style={style.input}
+                        secureTextEntry={!isPassVisible}
+                    ></TextInput>
+                    <TouchableOpacity
+                        onPress={togglePassVisibility}
+                        style={style.securBtn}
+                    >
+                        <Text style={style.securText}>
+                            {isPassVisible ? 'Приховати' : 'Показати'}
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+
                 <TouchableOpacity onPress={onLogin} style={style.inputBtn}>
                     <Text style={style.btnText}>Зареєстуватися</Text>
                 </TouchableOpacity>
@@ -76,12 +92,8 @@ const style = StyleSheet.create({
         backgroundColor: '#F6F6F6',
     },
     container: {
-        // backgroundColor: '#f0f',
-
-        // flex: 1,
         width: '100%',
-        // alignItems: 'center',
-        // justifyContent: 'center',
+        borderColor: '#000',
     },
     inputBtn: {
         paddingVertical: 16,
@@ -101,6 +113,19 @@ const style = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         paddingBottom: 100,
+    },
+    passwordInputBox: {
+        position: 'relative',
+    },
+    securBtn: {
+        position: 'absolute',
+        top: '50%',
+        transform: [{ translateY: -10 }],
+        right: 30,
+        zIndex: 1000,
+    },
+    securText: {
+        color: '#1B4371',
     },
 });
 
