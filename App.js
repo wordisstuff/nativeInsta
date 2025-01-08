@@ -12,6 +12,11 @@ import RegistrationScreen from './Screens/RegistrationScreen';
 // import MyIcon from './assets/union.svg';
 
 export default function App() {
+
+
+    const addAvatarHandler =()=>{
+         Alert.alert('ADD AVATAR')
+    }
     return (
         <ImageBackground
             source={require('./images/bg.png')}
@@ -21,25 +26,8 @@ export default function App() {
             <View style={styles.container}>
                 <View style={styles.screen}>
                     <View style={styles.avatar}>
-                        <Text style={styles.title}>AVA</Text>
-                        <TouchableOpacity style={styles.addAvatarBtn}>
-                            {/* <MyIcon width={12} height={12} /> */}
-                            {/* <View>
-                                <svg
-                                    width="13"
-                                    height="13"
-                                    viewBox="0 0 13 13"
-                                    fill="none"
-                                    // xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M7 0H6V6H0V7H6V13H7V7H13V6H7V0Z"
-                                        fill="#FF6C00"
-                                    />
-                                </svg>
-                            </View> */}
+                        <TouchableOpacity onPress={addAvatarHandler} style={styles.addAvatarBtn}>
+                                <Text style={styles.avatarBtn}>+</Text>
                         </TouchableOpacity>
                     </View>
                     <RegistrationScreen style={styles.modal} />
@@ -75,6 +63,27 @@ const styles = StyleSheet.create({
         width: 120,
         height: 120,
         backgroundColor: '#F6F6F6',
+        borderWidth:1,
+        borderColor:'#000',
         borderRadius: 16,
     },
+    addAvatarBtn:{
+        position:'absolute',
+        top:"60%",
+        right:'0%',
+        transform:[{translateX:11}],
+        width:22,
+        height:22,
+        borderRadius:'50%',
+        borderWidth:1,
+        borderColor:'#ff6978',
+    },
+    avatarBtn:{
+        justifyContent:'center',
+        alignItems:'center',
+        fontSize:26,
+        color:'#ff6978',
+        
+        // backgroundColor:'#ff6978'
+    }
 });
